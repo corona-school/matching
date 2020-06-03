@@ -128,7 +128,7 @@ void evaluate_matching(Graph &M, std::vector<Pupil> &pupil_vector, std::vector<S
 }
 
 int main(int argc, char *argv[]){
-    if(argc != 5){
+    if(argc != 6){
         throw std::runtime_error("The algorithm needs 5 input files. A file with the informaiont about the pupils, two files for the students, one file about the dissolved matches and the location for the output file."
                                  "For further information see the readme file.");
     }
