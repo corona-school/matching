@@ -72,9 +72,11 @@ void evaluate_matching(Graph &M, std::vector<Pupil> &pupil_vector, std::vector<S
                 }
             }
         }
-        num_pupils_with_i_subjects_unmatched[num_subjects_unmatched] += 1;
-        num_pupils_percentage_quantiles[(size_t) (5.0*num_subjects_matched/(num_subjects_matched + num_subjects_unmatched))] += 1;
-        average_subjects_if_nonperfect[num_subjects_unmatched] += num_subjects_matched + num_subjects_unmatched;
+        if(M.get_node(nodeid).adjacent_nodes().size() > 0){
+            num_pupils_with_i_subjects_unmatched[num_subjects_unmatched] += 1;
+            num_pupils_percentage_quantiles[(size_t) (5.0*num_subjects_matched/(num_subjects_matched + num_subjects_unmatched))] += 1;
+            average_subjects_if_nonperfect[num_subjects_unmatched] += num_subjects_matched + num_subjects_unmatched;
+        }
     }
 
     for(size_t i = 0; i < average_subjects_if_nonperfect.size(); i++){
