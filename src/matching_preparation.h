@@ -156,9 +156,9 @@ Graph create_matching_graph(char const *filename_dissolved_matches, std::vector<
         std::string token, pupil_id, student_id;
         getline(ss, token, ',');
         while (getline(ss, token, ',')) {
-            student_id = "\"" + token + "\"";
+            student_id = token;
             getline(ss, token, ',');
-            pupil_id = "\"" + token +"\"";
+            pupil_id = token;
             for(size_t node = 0; node < pupil_vector.size(); node++){
                 if(pupil_id == pupil_vector[node]._id){
                     for(size_t neighbor = 0; neighbor < g.get_node(node).adjacent_nodes().size(); neighbor++){
