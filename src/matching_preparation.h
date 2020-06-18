@@ -4,9 +4,9 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
-#include <graph.h>
-#include <pupil.h>
-#include <student.h>
+#include "graph.h"
+#include "pupil.h"
+#include "student.h"
 
 std::vector<Pupil> create_pupils_vector(char const *filename_pupils, std::vector<std::string> &subjects){
 
