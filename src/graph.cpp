@@ -117,6 +117,7 @@ void Graph::print_matching(std::vector<Pupil> const &pupil_vector, std::vector<S
     int num_students = student_vector.size();
     std::ofstream myfile;
     myfile.open(filename_output);
+    myfile << "pupil,student\n";
     for (auto nodeid = num_pupils; nodeid < num_pupils + num_students; ++nodeid) {  //we iterate over the students since the students vector is usually smaller than the pupils vector
         for (auto neighbor: _nodes[nodeid].adjacent_nodes()) {
             myfile << pupil_vector[neighbor.id()]._id << "," << student_vector[nodeid - num_pupils]._id << "\n";

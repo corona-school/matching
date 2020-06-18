@@ -4,9 +4,9 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
-#include <src/graph.h>
-#include <src/pupil.h>
-#include <src/student.h>
+#include <graph.h>
+#include <pupil.h>
+#include <student.h>
 
 std::vector<Pupil> create_pupils_vector(char const *filename_pupils, std::vector<std::string> &subjects){
 
@@ -20,6 +20,7 @@ std::vector<Pupil> create_pupils_vector(char const *filename_pupils, std::vector
     std::string token;
     std::getline(file_pupils, line);
     std::istringstream ss(line);
+    getline(ss, token, ',');
     while(getline(ss, token, ',')){
         subjects.push_back(token);
     }
