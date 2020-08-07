@@ -58,9 +58,9 @@ void evaluate_matching(Graph &M, std::vector<Pupil> &pupil_vector, std::vector<S
     int num_students = student_vector.size();
     double share_of_pupils_perfectly_matched;
     std::vector<int> subjects_not_matched(pupil_vector[0]._subjects.size(), 0); //represents the number how often subject i wasn't for a pupil
-    std::vector<int> num_pupils_with_i_subjects_unmatched(pupil_vector[0]._subjects.size() - 1, 0); //represents the number of pupils with i unmatched subjects (at the i-th entry of the vector)
+    std::vector<int> num_pupils_with_i_subjects_unmatched(pupil_vector[0]._subjects.size(), 0); //represents the number of pupils with i unmatched subjects (at the i-th entry of the vector)
     std::vector<int> num_pupils_percentage_quantiles(6, 0);    //represents the num pupils of which the subjects are matched by 0%-19%, by 20%-39%, ..., by 80%-99.9%, by 100%
-    std::vector<double> average_subjects_if_nonperfect(pupil_vector[0]._subjects.size() - 1, 0);   //will represent the average number of subjects a pupil requested if the matching wasn't perfect
+    std::vector<double> average_subjects_if_nonperfect(pupil_vector[0]._subjects.size(), 0);   //will represent the average number of subjects a pupil requested if the matching wasn't perfect
 
     for (auto nodeid = num_pupils; nodeid < num_pupils + num_students; ++nodeid) {  //we iterate over the students since the students vector is usually smaller than the pupils vector
         int num_subjects_matched = 0, num_subjects_unmatched = 0;   //counts for a single pupil how many subjects are matched and how many aren't.
