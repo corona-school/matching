@@ -12,7 +12,7 @@ winston.configure({
     transports: [
       new winston.transports.Console()
     ],
-    level: "debug"
+    level: process.env.NODE_ENV === "dev" ? "debug" : "info"
 });
 
 

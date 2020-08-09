@@ -14,7 +14,7 @@ const matching = bindings.matching;
 function performAlgorithmPure(pupilsFile: string, studentsUpperBoundFile: string, studentsLowerBoundFile: string, dissolvedMatchesFile: string, outputFile: string) {
     console.log("-------- Will perform matching... --------");
     matching(pupilsFile, studentsUpperBoundFile, studentsLowerBoundFile, dissolvedMatchesFile, outputFile); 
-    console.log("------------ Matching done... ------------");
+    console.log("------------ Matching done... ------------\n\n\n");
 }
 
 export default performAlgorithmPure;
