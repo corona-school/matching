@@ -2,13 +2,13 @@
   "name": "cschoolmatching",
   "version": "1.0.0",
   "description": "The matching algorithm used by Corona School.",
-  "main": "dist/module/index.js",
-  "types": "dist/module/index.d.ts",
+  "main": "lib/module/index.js",
+  "types": "lib/module/index.d.ts",
   "scripts": {
     "buildTS": "tsc",
     "buildCPP": "node-gyp rebuild",
     "test": "node_modules/ts-node/dist/bin.js node_modules/tape/bin/tape tests/**/*.ts",
-    "cli": "node dist/cli",
+    "cli": "node lib/cli",
     "cli:dev": "ts-node src/cli",
     "prepare": "npm run buildTS",
     "prepublishOnly": "npm test"
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/corona-school/matching#readme",
   "bin": {
-    "cs-matching": "dist/cli/index.js"
+    "cs-matching": "lib/cli/index.js"
   },
   "dependencies": {
     "@types/json2csv": "^5.0.1",
@@ -50,7 +50,7 @@
     "typescript": "^3.9.6"
   },
   "files": [
-    "dist/**/*",
+    "lib/**/*",
     "src/matching_algo/src/**/*.{cpp,h}",
     "src/matching_algo/index.cpp",
     "binding.gyp"
