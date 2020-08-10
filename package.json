@@ -6,7 +6,9 @@
   "scripts": {
     "buildTS": "tsc",
     "buildCPP": "node-gyp rebuild",
-    "test": "node_modules/ts-node/dist/bin.js node_modules/tape/bin/tape tests/**/*.ts"
+    "test": "node_modules/ts-node/dist/bin.js node_modules/tape/bin/tape tests/**/*.ts",
+    "cli": "node dist/cli",
+    "cli:dev": "ts-node src/cli"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,9 @@
     "url": "https://github.com/corona-school/matching/issues"
   },
   "homepage": "https://github.com/corona-school/matching#readme",
+  "bin": {
+    "cs-matching": "dist/cli/index.js"
+  },
   "dependencies": {
     "@types/json2csv": "^5.0.1",
     "@types/node": "^14.0.13",
