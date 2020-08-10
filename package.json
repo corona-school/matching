@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "The matching algorithm used by Corona School.",
   "main": "dist/module/index.js",
+  "types": "dist/module/index.d.ts",
   "scripts": {
     "buildTS": "tsc",
     "buildCPP": "node-gyp rebuild",
     "test": "node_modules/ts-node/dist/bin.js node_modules/tape/bin/tape tests/**/*.ts",
     "cli": "node dist/cli",
-    "cli:dev": "ts-node src/cli"
+    "cli:dev": "ts-node src/cli",
+    "prepare": "npm run buildTS",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
@@ -45,5 +48,11 @@
     "tape": "^5.0.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
-  }
+  },
+  "files": [
+    "dist/**/*",
+    "src/matching_algo/src/**/*.{cpp,h}",
+    "src/matching_algo/index.cpp",
+    "binding.gyp"
+  ]
 }
