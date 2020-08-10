@@ -1,4 +1,4 @@
-import { Tutor, Tutee, Match, InputFiles, OutputFile } from "./types";
+import { Tutor, Tutee, Match, Subject, Matchable, InputFiles, OutputFile } from "./types";
 import { createTmpFile, removeFiles } from "./utils/files";
 
 import matchingAlgo from "./algo/run";
@@ -68,5 +68,12 @@ function match(tutees: Tutee[], tutors: Tutor[] , dissolvedMatches: Match[]): Ma
 export {
     performAlgorithm,
     matchingAlgo,
-    match
+    match, 
+    Tutor, 
+    Tutee,
+    Match,
+    Subject,
+    Matchable,
+    InputFiles,
+    OutputFile
 }
